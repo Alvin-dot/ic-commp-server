@@ -60,11 +60,11 @@ function get_status() {
 function change_pmu_port() {
 	$.ajax({
         url: 'graphs.php',
-        data: {action : 'change_pmu_port', pmu : $("#select-pmu").val()},
+        data: {action : 'change_pmu_port', pmu : $("#select-pmu").text()},
         method: 'GET',
         dataType: 'json',
         success: function(response) {
-        	if(response['success'] == true) console.log($("#select-pmu").val());
+        	if(response['success'] == true) console.log(response);
        	}
   	});
 }

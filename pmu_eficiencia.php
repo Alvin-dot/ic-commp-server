@@ -23,6 +23,9 @@
   <!-- Navigation -->
   <?php include('menu.php'); ?>
 
+  <!-- Gets PMU value for page -->
+  <p id="select-pmu" hidden>eficiencia</p>
+
   <section id="about">
     <div class="container">
       <h4> Unidade de medição: Eficiência </h4>
