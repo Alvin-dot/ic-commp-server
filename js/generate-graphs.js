@@ -2,7 +2,6 @@ var modebar_config = {
 		modeBarButtonsToRemove: ['lasso2d','select2d','sendDataToCloud','toggleHover', 'hoverClosestCartesian', 'toggleSpikelines']
 	}
 
-change_pmu_port();
 toggleViews(get_status());
 get_graphs();
 
@@ -57,18 +56,6 @@ function get_status() {
     return status;
 }
 
-function change_pmu_port() {
-	$.ajax({
-        url: 'graphs.php',
-        data: {action : 'change_pmu_port', pmu : $("#select-pmu").val()},
-        method: 'GET',
-        dataType: 'json',
-        success: function(response) {
-        	if(response['success'] == true) console.log($("#select-pmu").val());
-       	}
-  	});
-}
-
 function toggleViews(status) {
 	switch(status) {
 		case 'working':
@@ -90,6 +77,7 @@ function toggleViews(status) {
 	    	break;
 	}
 }
+
 
 function draw_graph1(data, update) {
 	var layout;
