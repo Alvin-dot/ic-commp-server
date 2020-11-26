@@ -12,6 +12,9 @@ if(isset($_GET['action']) && !empty($_GET['action'])) {
 		case 'status':
 			get_status();
 			break;
+		case 'change_pmu_port':
+			change_pmu_port($pmu);
+			break;
 	}
 }
 
@@ -35,6 +38,20 @@ function graph($filename) {
 	}
 	
 	echo json_encode($coord);
+}
+
+
+function change_pmu_port($pmu) { 
+	$filename = "pmu_port.csv";
+	unlink($filename);
+	$file = fopen($filename, "w");
+	fwrite($file, $pmu);
+	fclose($file);
+	$response = "PMU changed";
+	
+	$return = array("success" => true, "response" => $response);
+	
+	echo json_encode($return);
 }
 
 function get_status() { 
