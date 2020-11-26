@@ -25,9 +25,16 @@
 
   <section id="about">
     <div class="container">
-      <div class="row" id="graph1"></div>
-      <div class="row" id="graph2"></div>
-      <div class="row justify-content-center" id="last-update" style="display:none"><h3>Last updated at <span id="last-update-time"></span></h3></div>
+      <h2>Escolha uma PMU</h2>
+      <select class="custom-select" id="select-pmu" onchange="location = this.value;">
+        <option value="index.php" selected>Selecione</option>
+        <option value="pmu_eficiencia.php">Cabine</option>
+        <option value="pmu_eficiencia.php">Eficiência</option>
+        <option value="pmu_eficiencia.php">Palotina</option>
+        <option value="pmu_eficiencia.php">Agrárias</option>
+        <option value="pmu_eficiencia.php" disabled>Usina</option>
+        <option value="pmu_eficiencia.php" disabled>Faxinal</option>
+      </select>
   </section>
 
   <?php include('footer.php'); ?>
@@ -41,9 +48,6 @@
 
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
-
-  <script type="text/javascript" src="js/plotly-latest.min.js"></script>
-  <script type="text/javascript" src="js/generate-graphs.js"></script>
 
 </body>
 
