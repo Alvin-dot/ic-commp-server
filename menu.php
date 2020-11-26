@@ -14,6 +14,31 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="about.php">Cabine</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="pmu_eficiencia.php">Eficiência</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="about.php">Patolina</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="about.php">Agrárias</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="about.php">Usina</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="about.php">Faxinal</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="about.php">About the project</a>
           </li>
