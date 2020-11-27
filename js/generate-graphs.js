@@ -2,16 +2,41 @@ var modebar_config = {
 		modeBarButtonsToRemove: ['lasso2d','select2d','sendDataToCloud','toggleHover', 'hoverClosestCartesian', 'toggleSpikelines']
 	}
 
-toggleViews('loading')
-change_pmu_port();
-get_graphs();
-toggleViews('working')
+var last_status = 'undefined';
+var current_status = 'undefined';
+var initial_status;
 
-$(document).ready(function() {
-	window.setInterval(function() {
-		toggleViews(get_status());
+initial_status = get_status();
+
+toggleViews('loading');
+change_pmu_port();
+
+function main_routine()
+{
+	current_status = get_status();
+	if((current_status == 'working' && last_status == 'loading') || (initial_status == 'working'))
+	{
 		get_graphs();
-	}, 300000);
+		toggleViews('working')
+	}
+	else if((current_status == 'loading' && last_status == 'working') || initial_status == 'loading')
+	{
+		toggleViews('loading');
+	}
+
+	last_status = current_status;
+	initial_status = 'undefined';
+
+}
+
+
+$(document).ready(function() 
+{
+	window.setInterval(function() 
+	{
+		main_routine();
+	}, 
+	500);
 })
 
 function get_graphs() {
