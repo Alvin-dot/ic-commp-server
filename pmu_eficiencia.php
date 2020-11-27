@@ -29,9 +29,16 @@
   <section id="about">
     <div class="container">
       <h4> Unidade de medição: Eficiência </h4>
-      <div class="row" id="graph1"></div>
-      <div class="row" id="graph2"></div>
+      <div class="row" id="graph1" style="width: 1140px;"></div>
+      <div class="row" id="graph2" style="width: 1140px;"></div>
       <div class="row justify-content-center" id="last-update" style="display:none"><h3>Last updated at <span id="last-update-time"></span></h3></div>
+    </div>
+      
+      <div id="loading" style="text-align: center; display: none">
+      <img src="svg/loading-big.gif" width="400px">
+      <p align="center"><h1><b>LOADING...</b></h1></p>
+    </div>
+
   </section>
 
   <?php include('footer.php'); ?>

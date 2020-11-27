@@ -2,9 +2,10 @@ var modebar_config = {
 		modeBarButtonsToRemove: ['lasso2d','select2d','sendDataToCloud','toggleHover', 'hoverClosestCartesian', 'toggleSpikelines']
 	}
 
+toggleViews('loading')
 change_pmu_port();
-toggleViews(get_status());
 get_graphs();
+toggleViews('working')
 
 $(document).ready(function() {
 	window.setInterval(function() {
@@ -75,6 +76,8 @@ function toggleViews(status) {
 			$("#graph1").show();
 	    	$("#graph2").show();
 	    	$("#loading").hide();
+			$("#last-update").show();
+
 	    	break;
 		case 'unavailable':
 	    	$("#graph1").hide();
