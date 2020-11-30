@@ -2,22 +2,54 @@ var modebar_config = {
 		modeBarButtonsToRemove: ['lasso2d','select2d','sendDataToCloud','toggleHover', 'hoverClosestCartesian', 'toggleSpikelines']
 	}
 
-var last_status = 'undefined';
 var current_status = 'undefined';
-var initial_status;
+var last_status = 'undefined';
 
-initial_status = get_status();
+var first_status = 'undefined';
+var second_status = 'undefined';
+var initial_status = 'undefined';
+
+var initial_flag = true;
+var state_flag = true;
 
 toggleViews('loading');
 change_pmu_port();
 
+// Checkup function to garantee not transition state from backend
+// This function will run two for every pmu change
+function start_checkup()
+{
+	if(initial_flag == true)
+	{
+		if(state_flag == true)
+			first_status = get_status();
+		else
+		{
+			second_status = get_status();
+			
+			// Checks first and second program start status for initial_status value
+			if((first_status == 'working') && (first_status == second_status))
+				initial_status = 'working';
+			else
+				initial_status = 'loading';
+
+			initial_flag = false;
+		}
+
+	state_flag = false;
+
+	}
+}
+
+// Routine function that checks for backend updates
+// This function runs every setInterval time step
 function main_routine()
 {
 	current_status = get_status();
 	if((current_status == 'working' && last_status == 'loading') || (initial_status == 'working'))
 	{
 		get_graphs();
-		toggleViews('working')
+		toggleViews('working');
 	}
 	else if((current_status == 'loading' && last_status == 'working') || initial_status == 'loading')
 	{
@@ -34,9 +66,11 @@ $(document).ready(function()
 {
 	window.setInterval(function() 
 	{
-		main_routine();
+		start_checkup();
+		if (initial_flag == false) 
+			main_routine();	
 	}, 
-	500);
+	2000);
 })
 
 function get_graphs() {
