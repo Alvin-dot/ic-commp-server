@@ -24,19 +24,19 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="about.php">Patolina</a>
+            <a class="nav-link js-scroll-trigger" href="pmu_patolina.php">Patolina</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="about.php">Agrárias</a>
+            <a class="nav-link js-scroll-trigger" href="pmu_agrarias.php">Agrárias</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="about.php">Usina</a>
+            <a class="nav-link js-scroll-trigger" href="javascript:void(0)">Usina</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="about.php">Faxinal</a>
+            <a class="nav-link js-scroll-trigger" href="javascript:void(0)">Faxinal</a>
           </li>
 
           <li class="nav-item">
