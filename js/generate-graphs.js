@@ -63,7 +63,7 @@ function main_routine()
 // Function that activates at button click
 $('#button_id').on('click', function() 
 {
-  console.log($("#time_window_select").val());
+  change_time_window();
 });
   
 
@@ -126,6 +126,18 @@ function change_pmu_port() {
 	$.ajax({
         url: 'graphs.php',
         data: {action : 'change_pmu_port', pmu : $("#select-pmu").text()},
+        method: 'GET',
+        dataType: 'json',
+        success: function(response) {
+        	if(response['success'] == true) console.log(response);
+       	}
+  	});
+}
+
+function change_time_window() {
+	$.ajax({
+        url: 'graphs.php',
+        data: {action : 'change_time_window', time_w : $("#time_window_select").val()},
         method: 'GET',
         dataType: 'json',
         success: function(response) {

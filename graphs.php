@@ -2,6 +2,8 @@
 if(isset($_GET['action']) && !empty($_GET['action'])) {
 	$action = $_GET['action'];
 	$pmu = (isset($_GET['pmu']) && !empty($_GET['pmu']) ? $_GET['pmu'] : "");
+	$time_window = (isset($_GET['time_w']) && !empty($_GET['time_w']) ? $_GET['time_w'] : "");
+
 	switch($action) {
 		case 'graph1': 
 			graph("Grafico1.csv"); 
@@ -14,6 +16,9 @@ if(isset($_GET['action']) && !empty($_GET['action'])) {
 			break;
 		case 'change_pmu_port':
 			change_pmu_port($pmu);
+			break;
+		case 'change_time_window':
+			change_time_window($time_window);
 			break;
 	}
 }
@@ -48,6 +53,19 @@ function change_pmu_port($pmu) {
 	fwrite($file, $pmu);
 	fclose($file);
 	$response = "PMU changed";
+	
+	$return = array("success" => true, "response" => $response);
+	
+	echo json_encode($return);
+}
+
+function change_time_window($time_w) { 
+	$filename = "pmu_time_window.csv";
+	unlink($filename);
+	$file = fopen($filename, "w");
+	fwrite($file, $time_w);
+	fclose($file);
+	$response = "Time window changed";
 	
 	$return = array("success" => true, "response" => $response);
 	
