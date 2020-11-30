@@ -23,18 +23,22 @@
   <!-- Navigation -->
   <?php include('menu.php'); ?>
 
+  <!-- Gets PMU value for page -->
+  <p id="select-pmu" hidden>cabine</p>
+
   <section id="about">
     <div class="container">
-      <h2>Escolha uma PMU</h2>
-      <select class="custom-select" id="select-pmu" onchange="location = this.value;">
-        <option value="index.php" selected>Selecione</option>
-        <option value="pmu_cabine.php">Cabine</option>
-        <option value="pmu_eficiencia.php">Eficiência</option>
-        <option value="pmu_eficiencia.php">Palotina</option>
-        <option value="pmu_eficiencia.php">Agrárias</option>
-        <option value="pmu_eficiencia.php" disabled>Usina</option>
-        <option value="pmu_eficiencia.php" disabled>Faxinal</option>
-      </select>
+      <h4> Unidade de medição: Cabine </h4>
+      <div class="row" id="graph1" style="width: 1140px;"></div>
+      <div class="row" id="graph2" style="width: 1140px;"></div>
+      <div class="row justify-content-center" id="last-update" style="display:none"><h3>Last updated at <span id="last-update-time"></span></h3></div>
+    </div>
+      
+      <div id="loading" style="text-align: center; display: none">
+      <img src="svg/loading-big.gif" width="400px">
+      <p align="center"><h1><b>LOADING...</b></h1></p>
+    </div>
+
   </section>
 
   <?php include('footer.php'); ?>
@@ -48,6 +52,9 @@
 
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
+
+  <script type="text/javascript" src="js/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="js/generate-graphs.js"></script>
 
 </body>
 
