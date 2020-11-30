@@ -58,9 +58,14 @@ function main_routine()
 
 	last_status = current_status;
 	initial_status = 'undefined';
-
 }
 
+// Function that activates at button click
+$('#button_id').on('click', function() 
+{
+  console.log($("#time_window_select").val());
+});
+  
 
 $(document).ready(function() 
 {
