@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>About the project</title>
+  <title>Sobre o projeto</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,8 +25,9 @@
 
   <section id="about">
     <div class="container">
-      <h1 class="mt-4">About the project</h1>
+      <h1 class="mt-4">Sobre o projeto</h1>
         <p>Este algoritmo realiza a coleta de dados da frequência da rede elétrica obtidos através de unidades μPMU instaladas na rede elétrica da universidade, e faz o cálculo da transformada de Fourier do sinal, com o objetivo de realizar a identificação de modos oscilatórios eletromecânicos presentes no sistema elétrico de potência.</p>
+        <p>Os dados são adquiridos com uma frequência de amostragem de 5 Hz e tratados utilizando técnicas de interpolação e tratamento de outliers, além de um filtro passa-banda FIR com frequências de corte de 0,1 e 2 Hz.</p>
         <!-- <button type="button" class="btn btn-primary btn-lg btn-block"> -->
           <!-- <a href="R3LS-info.pdf" class="btn btn-outline-dark btn-lg btn-block" download>For more information about the project, download</a> -->
         <!-- </button>   -->
