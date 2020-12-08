@@ -20,7 +20,7 @@ if(isset($_GET['action']) && !empty($_GET['action']))
 function startup($pmu, $time_w) {
 	
     // Execute the python script with the JSON data
-	$results = shell_exec("python C:\Users\alvar\Desktop\welch_json_test\ic-commp\startup.py $pmu $time_w");
+	$results = shell_exec("python C:\Users\alvar\Desktop\IC-COMMP\ic-commp\startup.py $pmu $time_w");
 
 	$data_results = json_decode($results, true);
 

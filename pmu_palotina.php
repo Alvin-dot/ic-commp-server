@@ -24,11 +24,11 @@
   <?php include('menu.php'); ?>
 
   <!-- Gets PMU value for page -->
-  <p id="select-pmu" hidden>patolina</p>
+  <p id="select-pmu" hidden>palotina</p>
 
   <section id="about">
     <div class="container">
-      <h4> Unidade de medição: Patolina </h4>
+      <h4> Unidade de medição: Palotina </h4>
       
       <form>
         <div class="form-group">

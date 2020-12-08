@@ -30,7 +30,7 @@
         <option value="index.php" selected>Selecione</option>
         <option value="pmu_cabine.php">Cabine</option>
         <option value="pmu_eficiencia.php">Eficiência</option>
-        <option value="pmu_patolina.php">Palotina</option>
+        <option value="pmu_palotina.php">Palotina</option>
         <option value="pmu_agrarias.php">Agrárias</option>
         <option value="about.php" disabled>Usina</option>
         <option value="about.php" disabled>Faxinal</option>

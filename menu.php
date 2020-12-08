@@ -24,7 +24,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="pmu_patolina.php">Patolina</a>
+            <a class="nav-link js-scroll-trigger" href="pmu_palotina.php">Palotina</a>
           </li>
 
           <li class="nav-item">
