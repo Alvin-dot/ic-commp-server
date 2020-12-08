@@ -31,12 +31,19 @@
       <h4> Unidade de medição: Eficiência </h4>
 
       <form>
-        <div class="form-group">
-          <label for="time_window_select">Informe a janela de tempo desejada</label>
-          <input type="number" class="form-control" id="time_window_select" aria-describedby="time_window" placeholder="Janela de tempo (min)" min="10" max="960" step="1">
-          <small id="time_window" class="form-text text-muted">Janela de tempo pré-configurada de 60 minutos. Janela de tempo máxima de 960 minutos.</small>
+        <div class="form-row">
+          <div class="col">
+            <label for="time_window_select">Informe a janela de tempo desejada em minutos</label>
+            <input type="number" class="form-control" id="time_window_select" aria-describedby="time_window" placeholder="60" min="10" max="960" step="1">
+            <small id="time_window" class="form-text text-muted">Janela de tempo máxima de 960 minutos.</small>
+          </div>
+          <div class="col">
+            <label for="sample_frequency_select">Informe a frequência de amostragem desejada em hertz</label>
+            <input type="number" class="form-control" id="sample_frequency_select" aria-describedby="time_window" placeholder="5" min="1" max="20" step="1">
+            <small id="freq_select" class="form-text text-muted">Frequência de amostragem máxima de 20 Hz.</small>
+          </div>
         </div>
-        <button type="button" id="button_id" class="btn btn-secondary">Atualizar</button>
+        <button type="button" id="button_id" class="btn btn-secondary" style="margin-top: 10px">Atualizar</button>
       </form>
       
       <div class="row" id="graph1" style="width: 1140px;"></div>
