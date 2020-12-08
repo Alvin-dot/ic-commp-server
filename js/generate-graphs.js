@@ -2,6 +2,9 @@ var modebar_config = {
 		modeBarButtonsToRemove: ['lasso2d','select2d','sendDataToCloud','toggleHover', 'hoverClosestCartesian', 'toggleSpikelines']
 	}
 
+var time_window = 60;
+var sample_frequency = 5;
+
 $(document).ready(function() 
 {
 	// Page first load
@@ -13,10 +16,7 @@ $(document).ready(function()
 	window.setInterval(function() 
 	{
 		toggleViews('loading');
-		if ((10 < $("#time_window_select").val()) && ($("#time_window_select").val() < 960))
-			change_time_window();
-		else
-			startup();
+		startup();
 		toggleViews('working');
 	}, 
 	300000);
@@ -27,29 +27,7 @@ $(document).ready(function()
 function startup() {
 	$.ajax({
         url: 'graphs.php',
-        data: {action : 'startup', pmu : $("#select-pmu").text(), time_w : 60},
-        method: 'GET',
-        dataType: 'json',
-        async: false,
-        success: function(response) {
-        	draw_graph1(response.date, response.freq);
-        	draw_graph2(response.welch_freq, response.welch);
-
-        	//Updates time and informs user
-			$("#last-update-time").html(new Date().toLocaleDateString() + " " +
-										new Date().toLocaleTimeString('en-GB', { hour: "numeric", 
-                                             									 minute: "numeric",
-                                             									 second: "numeric"}));
-        }
-	});
-
-}
-
-// This function works when user wishes to define time window
-function change_time_window() {
-	$.ajax({
-        url: 'graphs.php',
-        data: {action : 'startup', pmu : $("#select-pmu").text(), time_w : $("#time_window_select").val()},
+        data: {action : 'startup', pmu : $("#select-pmu").text(), time_w : time_window, sample_freq : sample_frequency},
         method: 'GET',
         dataType: 'json',
         async: false,
@@ -70,12 +48,17 @@ function change_time_window() {
 // Function that activates at button click
 $('#button_id').on('click', function() 
 {
-	if ((10 < $("#time_window_select").val()) && ($("#time_window_select").val() < 960))
-	{
-		toggleViews('loading');
-	  	change_time_window();
-		toggleViews('working');
-	}
+	// Checks time window value
+	if ((10 <= $("#time_window_select").val()) && ($("#time_window_select").val() <= 960))
+		time_window = parseInt($("#time_window_select").val());
+		
+	// Checks sample frequency value
+	if ((1 <= $("#sample_frequency_select").val()) && ($("#sample_frequency_select").val() <= 20))
+		sample_frequency = parseInt($("#sample_frequency_select").val());
+
+	toggleViews('loading');
+	startup();
+	toggleViews('working');
 });
 
 // Utility function for switching between page views
