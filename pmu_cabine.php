@@ -38,8 +38,8 @@
             <small id="time_window" class="form-text text-muted">Janela de tempo máxima de 960 minutos.</small>
           </div>
           <div class="col">
-            <label for="sample_frequency">Informe a frequência de amostragem desejada em hertz</label>
-            <input type="number" class="form-control" id="sample_frequency" aria-describedby="time_window" placeholder="5" min="1" max="20" step="1">
+            <label for="sample_frequency_select">Informe a frequência de amostragem desejada em hertz</label>
+            <input type="number" class="form-control" id="sample_frequency_select" aria-describedby="time_window" placeholder="5" min="1" max="20" step="1">
             <small id="freq_select" class="form-text text-muted">Frequência de amostragem máxima de 20 Hz.</small>
           </div>
         </div>
