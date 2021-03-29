@@ -32,11 +32,11 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="javascript:void(0)">Usina</a>
+            <a class="nav-link js-scroll-trigger" href="#">Usina</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="javascript:void(0)">Faxinal</a>
+            <a class="nav-link js-scroll-trigger" href="#">Faxinal</a>
           </li>
 
           <li class="nav-item">

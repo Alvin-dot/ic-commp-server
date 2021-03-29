@@ -26,6 +26,7 @@
   <!-- Gets PMU value for page -->
   <p id="select-pmu" hidden>eficiencia</p>
 
+  <!-- Page header and form -->
   <section id="about">
     <div class="container">
       <h4> Unidade de medição: Eficiência </h4>
@@ -34,28 +35,61 @@
         <div class="form-row">
           <div class="col">
             <label for="time_window_select">Informe a janela de tempo desejada em minutos</label>
-            <input type="number" class="form-control" id="time_window_select" aria-describedby="time_window" placeholder="60" min="10" max="960" step="1">
-            <small id="time_window" class="form-text text-muted">Janela de tempo máxima de 960 minutos.</small>
+            <input type="number" 
+                   class="form-control" 
+                   id="time_window_select" 
+                   aria-describedby="time_window" 
+                   placeholder="60" 
+                   min="1" 
+                   max="60" 
+                   step="1">
+            <small id="time_window" class="form-text text-muted">
+              Janela de tempo máxima de 60 minutos.
+            </small>
           </div>
+          
           <div class="col">
-            <label for="sample_frequency_select">Informe a frequência de amostragem desejada em hertz</label>
-            <input type="number" class="form-control" id="sample_frequency_select" aria-describedby="time_window" placeholder="5" min="1" max="20" step="1">
-            <small id="freq_select" class="form-text text-muted">Frequência de amostragem máxima de 20 Hz.</small>
+            <label for="sample_frequency_select">
+              Informe a frequência de amostragem desejada em hertz
+            </label>
+            <input 
+              type="number" 
+              class="form-control" 
+              id="sample_frequency_select" 
+              aria-describedby="time_window" 
+              placeholder="5" 
+              min="1" 
+              max="20" 
+              step="1">
+            <small id="freq_select" class="form-text text-muted">
+              Frequência de amostragem máxima de 20 Hz.
+            </small>
           </div>
         </div>
-        <button type="button" id="button_id" class="btn btn-secondary" style="margin-top: 10px">Atualizar</button>
+
+        <button type="button" 
+                id="button_id" 
+                class="btn btn-secondary" 
+                style="margin-top: 10px">
+                  Atualizar
+        </button>
       </form>
       
+      <!-- Gráficos -->
       <div class="row" id="graph1" style="width: 1140px;"></div>
       <div class="row" id="graph2" style="width: 1140px;"></div>
-      <div class="row justify-content-center" id="last-update" style="display:none"><h3>Última atualização em <span id="last-update-time"></span></h3></div>
+      
+      <!-- Tempo de atualização -->
+      <div class="row justify-content-center" id="last-update" style="display:none">
+        <h3>Última atualização em <span id="last-update-time"></span></h3>
+      </div>
     </div>
       
-      <div id="loading" style="text-align: center; display: none">
+    <!-- Logo de loading -->
+    <div id="loading" style="text-align: center; display: none">
       <img src="svg/loading-big.gif" width="400px">
       <p align="center"><h1><b>LOADING...</b></h1></p>
     </div>
-
   </section>
 
   <?php include('footer.php'); ?>
@@ -71,7 +105,7 @@
   <script src="js/scrolling-nav.js"></script>
 
   <script type="text/javascript" src="js/plotly-latest.min.js"></script>
-  <script type="text/javascript" src="js/generate-graphs.js"></script>
+  <script type="text/javascript" src="js/graphs.js"></script>
 
 </body>
 
