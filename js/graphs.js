@@ -10,18 +10,24 @@ const modebar_config = {
 let time_window = 60;
 let sample_frequency = 5;
 
+toggleViews('loading');
+
 $(document).ready(function() {
 
 	// Page first load
-	toggleViews('loading');
 	startup();
 	toggleViews('working');	
 
 	// Refresh page every five minutes
 	window.setInterval(function() {
 		toggleViews('loading');
-		startup();
-		toggleViews('working');
+
+		setTimeout(function() {
+			startup();
+			toggleViews('working');	
+		},
+		2000);
+		
 	},
 	300000);
 })  
