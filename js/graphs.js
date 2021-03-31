@@ -58,16 +58,23 @@ function startup() {
 $('#button_id').on('click', function() {
 	
 	// Checks time window value
-	if ((5 <= $("#time_window_select").val()) && ($("#time_window_select").val() <= 60))
+	if ($("#time_window_select").val() !== "")
 		time_window = parseInt($("#time_window_select").val());
 		
 	// Checks sample frequency value
-	if ((1 <= $("#sample_frequency_select").val()) && ($("#sample_frequency_select").val() <= 20))
+	if ($("#sample_frequency_select").val() !== "")
 		sample_frequency = parseInt($("#sample_frequency_select").val());
 
-	toggleViews('loading');
-	startup();
-	toggleViews('working');
+	if (5 <= time_window && time_window <= 60 && 1 <= sample_frequency && sample_frequency <= 20) {
+
+		toggleViews('loading');
+
+		setTimeout(function() {
+			startup();
+			toggleViews('working');	
+		},
+		2000);
+	}
 });
 
 // Utility function for switching between page views
