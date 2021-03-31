@@ -18,6 +18,14 @@
 
 </head>
 
+<style type="text/css">
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+
 <body id="page-top">
 
   <!-- Navigation -->
