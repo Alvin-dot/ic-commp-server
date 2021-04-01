@@ -1,7 +1,7 @@
 <?php
 // Add these lines in case of error 500 problems
-ini_set('max_execution_time','256'); //max_execution_time','0' <- unlimited time
-ini_set('memory_limit','512M');
+// ini_set('max_execution_time','256'); //max_execution_time','0' <- unlimited time
+// ini_set('memory_limit','512M');
 
 if(isset($_GET['action']) && !empty($_GET['action'])) 
 {
