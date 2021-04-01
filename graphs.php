@@ -1,7 +1,7 @@
 <?php
 // Add these lines in case of error 500 problems
-// ini_set('max_execution_time','256'); //max_execution_time','0' <- unlimited time
-// ini_set('memory_limit','512M');
+ini_set('max_execution_time','256'); //max_execution_time','0' <- unlimited time
+ini_set('memory_limit','512M');
 
 if(isset($_GET['action']) && !empty($_GET['action'])) 
 {
@@ -23,7 +23,7 @@ function startup($pmu, $time_w, $sample_freq) {
     // Execute the python script with the JSON data
 	$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_w $sample_freq");
 
-	// $results = shell_exec("python C:/Users/alvar/Desktop/IC-COMMP/ic-commp/temp.py $pmu $time_w $sample_freq");
+	// $results = shell_exec("python C:/Users/alvar/Desktop/IC-COMMP/ic-commp/startup.py $pmu $time_w $sample_freq");
 
 	$data_results = json_decode($results, true);
 
