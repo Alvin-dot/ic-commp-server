@@ -1,105 +1,107 @@
 const modebar_config = {
-		modeBarButtonsToRemove: ['lasso2d',
-								 'select2d',
-								 'sendDataToCloud',
-								 'toggleHover', 
-								 'hoverClosestCartesian', 
-								 'toggleSpikelines']
-	}
+	modeBarButtonsToRemove: ['lasso2d',
+		'select2d',
+		'sendDataToCloud',
+		'toggleHover',
+		'hoverClosestCartesian',
+		'toggleSpikelines']
+}
 
 let time_window = 60;
-let sample_frequency = 5;
+let sample_frequency = 15;
 
 toggleViews('loading');
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 	// Page first load
 	startup();
-	toggleViews('working');	
+	toggleViews('working');
 
 	// Refresh page every five minutes
-	window.setInterval(function() {
+	window.setInterval(function () {
 		toggleViews('loading');
 
-		setTimeout(function() {
+		setTimeout(function () {
 			startup();
-			toggleViews('working');	
+			toggleViews('working');
 		},
-		2000);
-		
+			2000);
+
 	},
-	300000);
-})  
+		300000);
+})
 
 
 // This function works at page change
 function startup() {
 	$.ajax({
-        url: 'graphs.php',
-        data: {action : 'startup', pmu : $("#select-pmu").text(), time_w : time_window, sample_freq : sample_frequency},
-        method: 'GET',
-        dataType: 'json',
-        async: false,
-        success: function(response) {
-        	draw_graph1(response.date, response.freq);
-        	draw_graph2(response.welch_freq, response.welch);
+		url: 'graphs.php',
+		data: { action: 'startup', pmu: $("#select-pmu").text(), time_w: time_window, sample_freq: sample_frequency },
+		method: 'GET',
+		dataType: 'json',
+		async: false,
+		success: function (response) {
+			draw_graph1(response.date, response.freq);
+			draw_graph2(response.welch_freq, response.welch);
 
-        	//Updates time and informs user
+			//Updates time and informs user
 			$("#last-update-time").html(new Date().toLocaleDateString() + " " +
-										new Date().toLocaleTimeString('en-GB', { hour: "numeric", 
-                                             									 minute: "numeric",
-                                             									 second: "numeric"}));
-        }
+				new Date().toLocaleTimeString('en-GB', {
+					hour: "numeric",
+					minute: "numeric",
+					second: "numeric"
+				}));
+		}
 	});
 }
 
 // Function that activates at button click
-$('#button_id').on('click', function() {
-	
+$('#button_id').on('click', function () {
+
 	// Checks time window value
 	if ($("#time_window_select").val() !== "")
 		time_window = parseInt($("#time_window_select").val());
-		
+
 	// Checks sample frequency value
 	if ($("#sample_frequency_select").val() !== "")
 		sample_frequency = parseInt($("#sample_frequency_select").val());
 
-	if (5 <= time_window && time_window <= 60 && 1 <= sample_frequency && sample_frequency <= 20) {
+	if (5 <= time_window && time_window <= 60 && 15 <= sample_frequency && sample_frequency <= 20) {
 
 		toggleViews('loading');
 
-		setTimeout(function() {
+		setTimeout(function () {
 			startup();
-			toggleViews('working');	
+			toggleViews('working');
 		},
-		2000);
+			2000);
 	}
 });
 
 // Utility function for switching between page views
 function toggleViews(status) {
-	switch(status) {
+	switch (status) {
 		case 'working':
 			$("#graph1").show();
-	    	$("#graph2").show();
-	    	$("#loading").hide();
+			$("#graph2").show();
+			$("#loading").hide();
 			$("#last-update").show();
-	    	break;
+			break;
 
 		case 'unavailable':
-	    	$("#graph1").hide();
-	    	$("#graph2").hide();
-	   		$("#loading").hide();
+			$("#graph1").hide();
+			$("#graph2").hide();
+			$("#loading").hide();
 			$("#last-update").hide();
-	    	break;
+			break;
 
 		case 'loading':
-	    	$("#graph1").hide();
-	    	$("#graph2").hide();
-	    	$("#loading").show();	
+			$("#graph1").hide();
+			$("#graph2").hide();
+			$("#loading").show();
 			$("#last-update").hide();
-	    	break;
+			break;
 	}
 }
 
@@ -140,7 +142,7 @@ function draw_graph2(data_x, data_y) {
 			title: 'Módulo'
 		}
 	}
-	
+
 	trace.push({
 		x: data_x,
 		y: data_y,
