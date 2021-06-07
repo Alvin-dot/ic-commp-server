@@ -43,6 +43,10 @@
         <option value="about.php" disabled>Usina</option>
         <option value="about.php" disabled>Faxinal</option>
       </select>
+
+      <h5 class="mt-4">Other methods available: </h5>
+      <a class="btn btn-secondary" href="https://sirius.eletrica.ufpr.br/yulewalker/index.php" target="_blank" role="button">Yule-Walker</a>
+
   </section>
 
   <?php include('footer.php'); ?>
