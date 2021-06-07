@@ -36,12 +36,12 @@
       <h2>Escolha uma PMU</h2>
       <select class="custom-select" id="select-pmu" onchange="location = this.value;">
         <option value="index.php" selected>Selecione</option>
-        <option value="pmu_cabine.php">Cabine</option>
-        <option value="pmu_eficiencia.php">Eficiência</option>
+        <option value="pmu_cabine.php">Elétrica</option>
+        <option value="pmu_eficiencia.php">Microgrid</option>
         <option value="pmu_palotina.php">Palotina</option>
         <option value="pmu_agrarias.php">Agrárias</option>
-        <option value="about.php" disabled>Usina</option>
-        <option value="about.php" disabled>Faxinal</option>
+        <option value="about.php" disabled>UsinaFV</option>
+        <option value="about.php" disabled>Copel</option>
       </select>
 
       <h5 class="mt-4">Other methods available: </h5>

@@ -18,11 +18,11 @@
       <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="pmu_cabine.php">Cabine</a>
+          <a class="nav-link js-scroll-trigger" href="pmu_cabine.php">Elétrica</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="pmu_eficiencia.php">Eficiência</a>
+          <a class="nav-link js-scroll-trigger" href="pmu_eficiencia.php">Microgrid</a>
         </li>
 
         <li class="nav-item">
@@ -34,11 +34,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">Usina</a>
+          <a class="nav-link js-scroll-trigger" href="#">UsinaFV</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">Faxinal</a>
+          <a class="nav-link js-scroll-trigger" href="#">Copel</a>
         </li>
 
         <li class="nav-item">

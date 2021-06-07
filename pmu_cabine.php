@@ -29,7 +29,7 @@
   <!-- Page header and form -->
   <section id="about">
     <div class="container">
-      <h4> Unidade de medição: Cabine </h4>
+      <h4> Unidade de medição: Elétrica </h4>
 
       <form>
         <div class="form-row">

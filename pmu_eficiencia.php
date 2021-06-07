@@ -29,7 +29,7 @@
   <!-- Page header and form -->
   <section id="about">
     <div class="container">
-      <h4> Unidade de medição: Eficiência </h4>
+      <h4> Unidade de medição: Microgrid </h4>
 
       <form>
         <div class="form-row">
