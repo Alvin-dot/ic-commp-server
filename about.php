@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Sobre o projeto</title>
+  <title>About the project</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,19 +25,25 @@
 
   <section id="about">
     <div class="container">
-      <h1 class="mt-4">Sobre o projeto</h1>
-        <p>Este algoritmo realiza a coleta de dados da frequência da rede elétrica obtidos através de unidades μPMU instaladas na rede elétrica da universidade, e faz o cálculo da transformada de Fourier do sinal, com o objetivo de realizar a identificação de modos oscilatórios eletromecânicos presentes no sistema elétrico de potência.</p>
-        <!-- <button type="button" class="btn btn-primary btn-lg btn-block"> -->
-          <!-- <a href="R3LS-info.pdf" class="btn btn-outline-dark btn-lg btn-block" download>For more information about the project, download</a> -->
-        <!-- </button>   -->
+      <h2 class="mt-4">About the project</h2>
+      <p>Real-time monitoring of the power grid has become increasingly viable due to the
+        advances in phasor measurement units (PMUs) technology, allowing system operators to analyze
+        a whole set of different events and dynamics present in the system. One particularly interesting
+        dynamic observed via PMU data is electromechanical oscillations, which pose a real threat to
+        power system stability. This website is part of a study with the objective of developing a web environment designed to estimate electromechanical modes present in the distribution grid based on real-time data from µPMU units. Those µPMUs are located at different campuses of the Universidade Federal do Paraná (UFPR). To achieve the mode estimation, the well-known Welch and Yule-Walker
+        algorithms are used. More details about this project can be found <a href="https://professorgustavo.weebly.com/pmu-based-real-time-power-systems-monitoring.html" target="_blank">here</a>.</p>
       <br />
       <br />
-      <h2>Team</h2>
+      <h3>Team</h3>
       <table class="table table-hover">
         <tbody>
           <tr>
-            <td>Prof. Dr. Gustavo Oliveira</td>
-            <td>gustavo@eletrica.ufpr.br</td>
+            <td>Prof. Dr. Gustavo Henrique da Costa Oliveira (coordinator)</td>
+            <td>gustavo.oliveira@ufpr.br</td>
+          </tr>
+          <tr>
+            <td>Prof. Dr. Ricardo Schumacher</td>
+            <td>schumacher.ric@gmail.com</td>
           </tr>
           <tr>
             <td>Prof. Dr. Eduardo Parente Ribeiro</td>
@@ -55,15 +61,11 @@
             <td>Yuri Poledna</td>
             <td>ypoledna@gmail.com</td>
           </tr>
-          <tr>
-            <td>Juliana Cristina Labatut Pereira</td>
-            <td>julianaclp350@gmail.com</td>
-          </tr>
         </tbody>
       </table>
       <br />
-      <h2>Acknowledgements</h2>
-      <p>This study was financed in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior  Brasil (CAPES)  Finance Code 001. This research was also partially supported by ANEEL’s R&D Program through COPEL’s PD 2866-0470-2017 project.</p>
+      <h3>Acknowledgements</h3>
+      <p>This study was supported by ANEEL’s R&D Program through COPEL’s PD 2866-0470-2017 project and also by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior Brasil (CAPES) Finance Code 001.</p>
     </div>
   </section>
 

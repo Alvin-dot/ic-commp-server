@@ -7,47 +7,49 @@
     </div> -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.php"><h1><b>Welch</b></h1></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="pmu_cabine.php">Cabine</a>
-          </li>
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="index.php">
+      <h1><b>Welch</b></h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="pmu_eficiencia.php">Eficiência</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="pmu_palotina.php">Palotina</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="pmu_cabine.php">Cabine</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="pmu_agrarias.php">Agrárias</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="pmu_eficiencia.php">Eficiência</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#">Usina</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="pmu_palotina.php">Palotina</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#">Faxinal</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="pmu_agrarias.php">Agrárias</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="about.php">Sobre o projeto</a>
-          </li>
-        </ul>
-      </div>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Usina</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Faxinal</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="about.php">About the project</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- <header class="bg-primary text-white">
+<!-- <header class="bg-primary text-white">
     <div class="container text-center">
       <h1>Welcome to Scrolling Nav</h1>
       <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
