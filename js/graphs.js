@@ -87,6 +87,7 @@ function toggleViews(status) {
 			$("#graph2").show();
 			$("#loading").hide();
 			$("#last-update").show();
+			$('#pmu-location').show();
 			break;
 
 		case 'unavailable':
@@ -94,6 +95,7 @@ function toggleViews(status) {
 			$("#graph2").hide();
 			$("#loading").hide();
 			$("#last-update").hide();
+			$('#pmu-location').show();
 			break;
 
 		case 'loading':
@@ -101,6 +103,7 @@ function toggleViews(status) {
 			$("#graph2").hide();
 			$("#loading").show();
 			$("#last-update").hide();
+			$('#pmu-location').hide();
 			break;
 	}
 }

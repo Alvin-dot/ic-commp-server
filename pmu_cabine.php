@@ -27,7 +27,7 @@
   <p id="select-pmu" hidden>cabine</p>
 
   <!-- Page header and form -->
-  <section id="about">
+  <section class="pb-0" id="about">
     <div class="container">
       <h4> Unidade de medição: Elétrica </h4>
 
@@ -75,6 +75,11 @@
       </p>
     </div>
   </section>
+
+  <div class="text-center pb-5" id="pmu-location">
+    <h5 class="pt-4">Localização geográfica da PMU</h5>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d900.6527585227743!2d-49.23439171191856!3d-25.45126449898119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI3JzA0LjYiUyA0OcKwMTQnMDEuOCJX!5e0!3m2!1spt-BR!2sbr!4v1623191654981!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 
   <?php include('footer.php'); ?>
 

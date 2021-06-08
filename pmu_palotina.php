@@ -27,7 +27,7 @@
   <p id="select-pmu" hidden>palotina</p>
 
   <!-- Page header and form -->
-  <section id="about">
+  <section class="pb-0" id="about">
     <div class="container">
       <h4> Unidade de medição: Palotina </h4>
 
@@ -75,6 +75,11 @@
       </p>
     </div>
   </section>
+
+  <div class="text-center pb-5" id="pmu-location">
+    <h5 class="pt-4">Localização geográfica da PMU</h5>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1818.2393237365757!2d-53.84290248364465!3d-24.29493399721518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDE3JzQxLjgiUyA1M8KwNTAnMzEuMSJX!5e0!3m2!1spt-BR!2sbr!4v1623191765386!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 
   <?php include('footer.php'); ?>
 
