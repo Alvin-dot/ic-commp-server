@@ -113,12 +113,12 @@ function draw_graph1(data_x, data_y) {
 	var trace = [];
 
 	layout = {
-		title: 'Frequência de operação do SEP',
+		title: 'Power grid operating frequency',
 		xaxis: {
-			title: 'Tempo'
+			title: 'Time'
 		},
 		yaxis: {
-			title: 'Frequência [Hz]'
+			title: 'Frequency [Hz]'
 		}
 	}
 
@@ -137,12 +137,12 @@ function draw_graph2(data_x, data_y) {
 	var trace = [];
 
 	layout = {
-		title: 'Transformada de Welch',
+		title: 'Welch periodogram',
 		xaxis: {
-			title: 'Frequência [Hz]'
+			title: 'Frequency [Hz]'
 		},
 		yaxis: {
-			title: 'Módulo'
+			title: 'Module'
 		}
 	}
 

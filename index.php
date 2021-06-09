@@ -33,9 +33,9 @@
 
   <section id="about">
     <div class="container">
-      <h2>Escolha uma PMU</h2>
+      <h2>Choose a PMU</h2>
       <select class="custom-select" id="select-pmu" onchange="location = this.value;">
-        <option value="index.php" selected>Selecione</option>
+        <option value="index.php" selected>Choose...</option>
         <option value="pmu_cabine.php">Elétrica</option>
         <option value="pmu_eficiencia.php">Microgrid</option>
         <option value="pmu_palotina.php">Palotina</option>
