@@ -25,8 +25,8 @@
 
   <section id="about">
     <div class="container">
-      <h2 class="mt-4">About the project</h2>
-      <p>
+      <h2 class="mt-4">PMU based real-time monitoring of power system dynamics</h2>
+      <p> ​
         The main goal of this project is to investigate new methods and algorithms for PMU/ µPMU data analysis aiming to estimate power system oscillation modes.
         The results are useful to support decisions regarding power system stability (transient and small signals) and found application to both in the Generation/Transmission or the Distribution context.<br>
 
@@ -49,11 +49,11 @@
           </tr>
           <tr>
             <td>Prof. Dr. Eduardo Parente Ribeiro</td>
-            <td>edu@eletrica.ufpr.br</td>
+            <td>edu@ufpr.br</td>
           </tr>
           <tr>
             <td>Prof. Dr. Roman Kuiava</td>
-            <td>romankuiava@gmail.com</td>
+            <td>kuiava@ufpr.br</td>
           </tr>
           <tr>
             <td>Álvaro José Baranoski</td>
