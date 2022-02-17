@@ -8,24 +8,38 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$pmu = (isset($_GET['pmu']) && !empty($_GET['pmu']) ? $_GET['pmu'] : "");
 	$time_window = (isset($_GET['time_w']) && !empty($_GET['time_w']) ? $_GET['time_w'] : "");
 	$sample_frequency = (isset($_GET['sample_freq']) && !empty($_GET['sample_freq']) ? $_GET['sample_freq'] : "");
+	$segment_window = $_GET['segment_window'];
+	$segment_overlap = $_GET['segment_overlap'];
+	$filter_lower = $_GET['filter_lower'];
+	$filter_higher = $_GET['filter_higher'];
+	$outlier_constant = $_GET['outlier_constant'];
+	$view = $_GET['view'];
 	switch ($action) {
 		case 'startup':
-			startup($pmu, $time_window, $sample_frequency);
+			startup(
+				$pmu, 
+				$time_window, 
+				$sample_frequency, 
+				$segment_window,
+				$segment_overlap,
+				$filter_lower,
+				$filter_higher,
+				$outlier_constant,
+				$view
+			);
 			break;
 	}
 }
 
 // Main function, gets data from startup.py
 // TODO: Mudar o path e o interpreter do programa em python
-function startup($pmu, $time_w, $sample_freq)
+function startup($pmu, $time_w, $sample_freq, $segment_window, $segment_overlap, $filter_lower, $filter_higher, $outlier_constant, $view)
 {
 
 	// Execute the python script with the JSON data
-	$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_w $sample_freq");
+	$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant $view");
 
-	// $results = shell_exec("python C:/Users/alvar/Desktop/IC-COMMP/Welch/Welch-backend/startup.py $pmu $time_w $sample_freq");
+	// $results = shell_exec("D:/Alvaro/Faculdade/2021-2/TCC/Source/ic-commp-welch-backend/venv/Scripts/python.exe D:/Alvaro/Faculdade/2021-2/TCC/Source/ic-commp-welch-backend//startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant $view");
 
-	$data_results = json_decode($results, true);
-
-	echo json_encode($data_results);
+	echo json_encode($results);
 }
