@@ -57,7 +57,14 @@ function startup() {
 				return;
 			}
 			
-			const res = JSON.parse(response);
+
+			let res;
+			if (typeof response === "object") {
+				res = response;
+			} else {
+				res = JSON.parse(response);
+			}
+
 			
 			console.log(res);
 
