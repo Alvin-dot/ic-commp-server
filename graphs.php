@@ -1,7 +1,7 @@
 <?php
 // Add these lines in case of error 500 problems
-ini_set('max_execution_time', '256'); //max_execution_time','0' <- unlimited time
-ini_set('memory_limit', '512M');
+// ini_set('max_execution_time', '256'); //max_execution_time','0' <- unlimited time
+// ini_set('memory_limit', '512M');
 
 
 
@@ -52,7 +52,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_window $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 			// $results = shell_exec("D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend/venv/Scripts/python.exe D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend//startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 			
-			echo(empty($results));
+			echo json_decode($results);
 
 			break;
 	}
