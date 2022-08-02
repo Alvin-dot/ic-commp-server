@@ -39,7 +39,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			// echo($filter_higher + "\n");
 			// echo($outlier_constant + "\n");
 
-			$pmu = "agrarias";
+			$pmu = "palotina";
 			$time_window = 20;
 			$sample_freq = 120;
 			$segment_window = 100;
