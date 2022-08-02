@@ -17,16 +17,19 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$outlier_constant 	= (isset($_GET['outlier_constant']) && !empty($_GET['outlier_constant']) ? $_GET['outlier_constant'] : "");
 	switch ($action) {
 		case 'startup':
-			startup(
-				$pmu, 
-				$time_window, 
-				$sample_frequency, 
-				$segment_window,
-				$segment_overlap,
-				$filter_lower,
-				$filter_higher,
-				$outlier_constant,
-			);
+
+			echo("hello world!");
+			// startup(
+			// 	$pmu, 
+			// 	$time_window, 
+			// 	$sample_frequency, 
+			// 	$segment_window,
+			// 	$segment_overlap,
+			// 	$filter_lower,
+			// 	$filter_higher,
+			// 	$outlier_constant,
+			// );
+
 			break;
 	}
 }
@@ -41,5 +44,4 @@ function startup($pmu, $time_w, $sample_freq, $segment_window, $segment_overlap,
 	// $results = shell_exec("D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend/venv/Scripts/python.exe D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend//startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 
 	// echo json_encode($results);
-	echo("hello world!");
 }
