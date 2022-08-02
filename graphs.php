@@ -29,7 +29,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			// 	$outlier_constant,
 			// );
 			
-			echo($startup);
+			echo($action);
 			echo($pmu + "\n");
 			echo($time_window + "\n");
 			echo($sample_frequency + "\n");
