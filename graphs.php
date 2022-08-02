@@ -39,6 +39,15 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			// echo($filter_higher + "\n");
 			// echo($outlier_constant + "\n");
 
+			$pmu = "agrarias";
+			$time_window = 20;
+			$sample_freq = 120;
+			$segment_window = 100;
+			$segment_overlap = 50;
+			$filter_lower = 0.3;
+			$filter_higher = 7.0;
+			$outlier_constant = 3.5;
+
 			// Execute the python script with the JSON data
 			$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_window $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 			// $results = shell_exec("D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend/venv/Scripts/python.exe D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend//startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
