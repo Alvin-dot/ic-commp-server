@@ -5,31 +5,40 @@ ini_set('memory_limit', '512M');
 
 
 
-// if (isset($_GET['action']) && !empty($_GET['action'])) {
-// 	$action = $_GET['action'];
-// 	$pmu = (isset($_GET['pmu']) && !empty($_GET['pmu']) ? $_GET['pmu'] : "");
-// 	$time_window = (isset($_GET['time_w']) && !empty($_GET['time_w']) ? $_GET['time_w'] : "");
-// 	$sample_frequency = (isset($_GET['sample_freq']) && !empty($_GET['sample_freq']) ? $_GET['sample_freq'] : "");
-// 	$segment_window = $_GET['segment_window'];
-// 	$segment_overlap = $_GET['segment_overlap'];
-// 	$filter_lower = $_GET['filter_lower'];
-// 	$filter_higher = $_GET['filter_higher'];
-// 	$outlier_constant = $_GET['outlier_constant'];
-// 	switch ($action) {
-// 		case 'startup':
-// 			startup(
-// 				$pmu, 
-// 				$time_window, 
-// 				$sample_frequency, 
-// 				$segment_window,
-// 				$segment_overlap,
-// 				$filter_lower,
-// 				$filter_higher,
-// 				$outlier_constant,
-// 			);
-// 			break;
-// 	}
-// }
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+	$action = $_GET['action'];
+	$pmu 				= (isset($_GET['pmu']) && !empty($_GET['pmu']) ? $_GET['pmu'] : "");
+	$time_window 		= (isset($_GET['time_w']) && !empty($_GET['time_w']) ? $_GET['time_w'] : "");
+	$sample_frequency 	= (isset($_GET['sample_freq']) && !empty($_GET['sample_freq']) ? $_GET['sample_freq'] : "");
+	$segment_window 	= (isset($_GET['segment_window']) && !empty($_GET['segment_window']) ? $_GET['segment_window'] : "");
+	$segment_overlap 	= (isset($_GET['segment_overlap']) && !empty($_GET['segment_overlap']) ? $_GET['segment_overlap'] : "");
+	$filter_lower 		= (isset($_GET['filter_lower']) && !empty($_GET['filter_lower']) ? $_GET['filter_lower'] : "");
+	$filter_higher 		= (isset($_GET['filter_higher']) && !empty($_GET['filter_higher']) ? $_GET['filter_higher'] : "");
+	$outlier_constant 	= (isset($_GET['outlier_constant']) && !empty($_GET['outlier_constant']) ? $_GET['outlier_constant'] : "");
+	switch ($action) {
+		case 'startup':
+			echo($pmu);
+			echo($time_window);
+			echo($sample_frequency);
+			echo($segment_window);
+			echo($segment_overlap);
+			echo($filter_lower);
+			echo($filter_higher);
+			echo($outlier_constant);
+			
+			// startup(
+			// 	$pmu, 
+			// 	$time_window, 
+			// 	$sample_frequency, 
+			// 	$segment_window,
+			// 	$segment_overlap,
+			// 	$filter_lower,
+			// 	$filter_higher,
+			// 	$outlier_constant,
+			// );
+			break;
+	}
+}
 
 // Main function, gets data from startup.py
 // TODO: Mudar o path e o interpreter do programa em python
