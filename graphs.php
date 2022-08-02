@@ -17,8 +17,6 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$outlier_constant 	= (isset($_GET['outlier_constant']) && !empty($_GET['outlier_constant']) ? $_GET['outlier_constant'] : "");
 	switch ($action) {
 		case 'startup':
-
-			echo("hello world!");
 			
 			// startup(
 			// 	$pmu, 
@@ -35,7 +33,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_window $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 			// $results = shell_exec("D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend/venv/Scripts/python.exe D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend//startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 			
-			echo $results;
+			echo json_decode($results, true);
 
 			break;
 	}
