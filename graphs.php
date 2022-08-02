@@ -29,21 +29,21 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			// 	$outlier_constant,
 			// );
 			
-			echo($action);
-			echo($pmu);
-			echo($time_window);
-			echo($sample_frequency + "\n");
-			echo($segment_window + "\n");
-			echo($segment_overlap + "\n");
-			echo($filter_lower + "\n");
-			echo($filter_higher + "\n");
-			echo($outlier_constant + "\n");
+			// echo($action);
+			// echo($pmu);
+			// echo($time_window);
+			// echo($sample_frequency + "\n");
+			// echo($segment_window + "\n");
+			// echo($segment_overlap + "\n");
+			// echo($filter_lower + "\n");
+			// echo($filter_higher + "\n");
+			// echo($outlier_constant + "\n");
 
 			// Execute the python script with the JSON data
-			// $results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_window $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
+			$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_window $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 			// $results = shell_exec("D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend/venv/Scripts/python.exe D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend//startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 			
-			// echo json_decode($results, true);
+			echo json_decode($results);
 
 			break;
 	}
