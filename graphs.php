@@ -6,7 +6,7 @@ ini_set('memory_limit', '512M');
 
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
-	$action = $_GET['action'];
+	$action 			= $_GET['action'];
 	$pmu 				= (isset($_GET['pmu']) && !empty($_GET['pmu']) ? $_GET['pmu'] : "");
 	$time_window 		= (isset($_GET['time_w']) && !empty($_GET['time_w']) ? $_GET['time_w'] : "");
 	$sample_frequency 	= (isset($_GET['sample_freq']) && !empty($_GET['sample_freq']) ? $_GET['sample_freq'] : "");
@@ -17,25 +17,16 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$outlier_constant 	= (isset($_GET['outlier_constant']) && !empty($_GET['outlier_constant']) ? $_GET['outlier_constant'] : "");
 	switch ($action) {
 		case 'startup':
-			echo($pmu);
-			echo($time_window);
-			echo($sample_frequency);
-			echo($segment_window);
-			echo($segment_overlap);
-			echo($filter_lower);
-			echo($filter_higher);
-			echo($outlier_constant);
-			
-			// startup(
-			// 	$pmu, 
-			// 	$time_window, 
-			// 	$sample_frequency, 
-			// 	$segment_window,
-			// 	$segment_overlap,
-			// 	$filter_lower,
-			// 	$filter_higher,
-			// 	$outlier_constant,
-			// );
+			startup(
+				$pmu, 
+				$time_window, 
+				$sample_frequency, 
+				$segment_window,
+				$segment_overlap,
+				$filter_lower,
+				$filter_higher,
+				$outlier_constant,
+			);
 			break;
 	}
 }
@@ -46,10 +37,9 @@ function startup($pmu, $time_w, $sample_freq, $segment_window, $segment_overlap,
 {
 
 	// Execute the python script with the JSON data
-	$results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
+	// $results = shell_exec("/opt/ic-commp/bin/python3 /opt/ic-commp/ic-commp/startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 	// $results = shell_exec("D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend/venv/Scripts/python.exe D:/Alvaro/Faculdade/TCC/Source/ic-commp-welch-backend//startup.py $pmu $time_w $sample_freq $segment_window $segment_overlap $filter_lower $filter_higher $outlier_constant");
 
 	// echo json_encode($results);
+	echo("hello world!");
 }
-
-echo "hello world!";
