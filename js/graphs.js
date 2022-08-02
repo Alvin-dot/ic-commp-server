@@ -7,8 +7,8 @@ const modebar_config = {
 		'toggleSpikelines']
 }
 
-let time_window = 60;
-let sample_frequency = 15;
+let time_window = 20;
+let sample_frequency = 120;
 let segmentWindow = 100;
 let segmentOverlap = 50;
 let filterLower = 0.3;
@@ -42,7 +42,6 @@ function startup() {
 		filter_lower: filterLower,
 		filter_higher: filterHigher,
 		outlier_constant: outlierConstant,
-		view: view
 	};
 
 	$.ajax({
@@ -64,16 +63,8 @@ function startup() {
 
 			draw_graph1(res.date, res.freq);
 			draw_graph2(res.welch_freq, res.welch);
-
-
-
-			// Preprocessed signal graph logic
-			if (res.freq_process) {
 				draw_graph_processed(res.date, res.freq_process);
-				toggleViews('working-complete');
-			} else {
 				toggleViews('working');
-			}
 
 			//Updates time and informs user
 			$("#last-update-time").html(new Date().toLocaleDateString() + " " +
@@ -93,12 +84,13 @@ $('#dashboard-select-div').on('click', () => {
 	// Complete dashboard
 	if (checkbox.checked) {
 		form.classList.remove('d-none');
-		view = 'complete';
+		setPlaceholder();
+		toggleViews('working-complete');
 	} 
 	// Simplified dashboard
 	else {
 		form.classList.add('d-none');
-		view = 'simplified';
+		toggleViews('working');
 	}
 })
 
@@ -133,13 +125,7 @@ $('#button_id').on('click', function () {
 	if ($("#outliner_select").val() !== "")
 		outlierConstant = parseFloat($("#outliner_select").val());
 
-	console.log('cheguei até aqui');
-
-	if (5 <= time_window && time_window <= 60 &&
-		15 <= sample_frequency && sample_frequency <= 30) {
-		startup();
-		console.log('e aqui?');
-	}
+	startup();
 });
 
 // Utility function for switching between page views
@@ -148,7 +134,7 @@ function toggleViews(status) {
 
 	switch (status) {
 		case 'working':
-			show('graph1');
+			hide('graph1');
 			show('graph2');
 			hide('graph_processed');
 			hide('loading');
@@ -276,4 +262,27 @@ function hide(elementId) {
 	if (!element.classList.contains('d-none')) {
 		element.classList.add('d-none');
 	}
+}
+
+function setPlaceholder() {
+	// Checks time window value
+	$("#time_window_select").attr("placeholder", time_window);
+
+	// Checks sample frequency value
+	$("#sample_frequency_select").attr("placeholder", sample_frequency);
+
+	// Checks welch segment window
+	$("#segment_window_select").attr("placeholder", segmentWindow);
+
+	// Checks welch overlap percentage
+	$("#segment_overlap_select").attr("placeholder", segmentOverlap);
+
+	// filter lower frequency
+	$("#filter_lower_select").attr("placeholder", filterLower);
+
+	// filter higher frequency
+	$("#filter_higher_select").attr("placeholder", filterHigher);
+
+	// filter lower frequency
+	$("#outliner_select").attr("placeholder", outlierConstant);
 }

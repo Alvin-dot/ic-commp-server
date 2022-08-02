@@ -1,12 +1,20 @@
 <?php
 
-$pmu = "eficiencia";
-$time_w = 30;
-$sample_freq = 5;
+$pmu = "palotina";
+$time_w = 20;
+$sample_freq = 120;
+$segmentWindow = 100;
+$segmentOverlap = 50;
+$filter_lower = 0.3;
+$filter_higher = 7.0;
+$outlier_constant = 3.5;
+$view = "complete";
 
-// Execute the python script with the JSON data
-$results = shell_exec("python C:\Users\alvar\Desktop\IC-COMMP\ic-commp\\startup.py $pmu $time_w $sample_freq");
+$results = shell_exec("D:\Alvaro\Faculdade\TCC\Source\ic-commp-welch-backend\\venv\Scripts\python.exe D:\Alvaro\Faculdade\TCC\Source\ic-commp-welch-backend\\startup.py $pmu $time_w $sample_freq $segmentWindow $segmentOverlap $filter_lower $filter_higher $outlier_constant $view");
+// $results = shell_exec("D:\Alvaro\Faculdade\TCC\Source\ic-commp-welch-backend\\venv\Scripts\python.exe D:\Alvaro\Faculdade\TCC\Source\ic-commp-welch-backend\main\cluster.py");
+
+print_r($results);
 
 $data_results = json_decode($results, true);
 
-print_r($data_results);
+// print_r(json_decode($results, true));
