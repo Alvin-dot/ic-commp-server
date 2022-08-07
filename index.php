@@ -16,7 +16,7 @@
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
 
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
 </head>
 

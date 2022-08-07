@@ -19,7 +19,7 @@
   <!-- Toggle button CSS -->
   <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 
 <body id="page-top">
