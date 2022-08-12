@@ -57,7 +57,6 @@ function startup() {
 				return;
 			}
 			
-
 			let res;
 			if (typeof response === "object") {
 				res = response;
@@ -65,13 +64,12 @@ function startup() {
 				res = JSON.parse(response);
 			}
 
-			
 			console.log(res);
-
-			draw_graph1(res.date, res.freq);
-			draw_graph2(res.welch_freq, res.welch);
-				draw_graph_processed(res.date, res.freq_process);
-				toggleViews('working');
+			
+			resetTable();
+			updateTable(res["peaks"]);
+			dashboard(res);
+			toggleViews('working');
 
 			//Updates time and informs user
 			$("#last-update-time").html(new Date().toLocaleDateString() + " " +
@@ -144,14 +142,44 @@ $('#button_id').on('click', function () {
 	startup();
 });
 
+function updateTable(peaks) {
+	const tbody = document.querySelector("tbody");
+    let count = 1;
+    peaks.forEach((mode) =>{ 
+        let row = 
+        `
+        <tr>
+            <th scope="row">${count}</th>
+            <td>${mode[0].toFixed(2)}</td>
+            <td>${mode[1].toExponential(2)}</td>
+        </tr>
+        `;
+        tbody.innerHTML = tbody.innerHTML + row;
+        count += 1;
+    });
+}
+
+function resetTable() {
+	const tbody = document.querySelector("tbody");
+	tbody.innerHTML = "";
+}
+
+function dashboard(res) {
+	
+	draw_graph1(res["date"], res["freq"]);
+	draw_graph2(res.welch_freq, res.welch);
+	draw_graph_processed(res.date, res.freq_process);
+}
+
 // Utility function for switching between page views
 function toggleViews(status) {
 	console.log(status);
 
 	switch (status) {
 		case 'working':
+			show("main_modes_div");
 			hide('graph1');
-			show('graph2');
+			hide('graph2');
 			hide('graph_processed');
 			hide('loading');
 			show('last-update');
@@ -160,6 +188,7 @@ function toggleViews(status) {
 			break;
 
 		case 'working-complete':
+			hide("main_modes_div");
 			show('graph1');
 			show('graph2');
 			show('graph_processed');
@@ -170,6 +199,7 @@ function toggleViews(status) {
 			break;
 
 		case 'unavailable':
+			hide("main_modes_div");
 			hide('graph1');
 			hide('graph2');
 			hide('graph_processed');
@@ -180,6 +210,7 @@ function toggleViews(status) {
 			break;
 
 		case 'loading':
+			hide("main_modes_div");
 			hide('graph1');
 			hide('graph2');
 			hide('graph_processed');

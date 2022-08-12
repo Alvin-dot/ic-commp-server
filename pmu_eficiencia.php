@@ -162,8 +162,24 @@
         id="button_id" 
         class="btn btn-secondary" 
         style="margin-top: 10px">
-          Update
-        </button>
+        Update
+      </button>
+
+      <div class="container d-none pt-3 p-0 mt-3" id="main_modes_div">
+        <h3> Periodogram's electromechanical mode's peaks </h3>
+        
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Frequency range [Hz]</th>
+              <th scope="col">Mode incidence</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
 
       <!-- Gráficos -->
       <div class="row d-none" id="graph1" style="width: 1140px;"></div>
