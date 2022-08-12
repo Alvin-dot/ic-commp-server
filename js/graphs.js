@@ -8,7 +8,7 @@ const modebar_config = {
 }
 
 let time_window = 20;
-let sample_frequency = 120;
+let sample_frequency = 100;
 let segmentWindow = 100;
 let segmentOverlap = 50;
 let filterLower = 0.3;
