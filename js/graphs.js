@@ -85,21 +85,30 @@ function startup() {
 }
 
 // Dashboard view selection button click
-$('#dashboard-select-div').on('click', () => {
-	const checkbox = document.getElementById('dashboard-select-checkbox');
+$('#toggle-btn').on('click', () => {
+	const btn = document.getElementById("toggle-btn");
 	const form = document.getElementById('page-form');
+	const isActive = btn.classList.contains("active");
 	// Complete dashboard
-	if (checkbox.checked) {
+	if (!isActive) {
+		btn.innerText = "Complete dashboard";
+		btn.classList.remove("btn-primary");
+		btn.classList.add("btn-secondary");
+
 		form.classList.remove('d-none');
 		setPlaceholder();
 		toggleViews('working-complete');
 	} 
 	// Simplified dashboard
 	else {
+		btn.innerText = "Simplified dashboard";
+		btn.classList.remove("btn-secondary");
+		btn.classList.add("btn-primary");
+
 		form.classList.add('d-none');
 		toggleViews('working');
 	}
-})
+});
 
 // Update button click
 $('#button_id').on('click', function () {
@@ -260,6 +269,17 @@ function show(elementId) {
 	if (!element) return;
 	if (element.classList.contains('d-none')) {
 		element.classList.remove('d-none');
+	}
+
+	// Blocks application buttons if loading 
+	const btn = document.getElementById("toggle-btn");
+	const updateBtn = document.getElementById("button_id");
+	if (elementId === "loading") {
+		btn.disabled = true;
+		updateBtn.disabled = true;
+	} else {
+		btn.disabled = false;
+		updateBtn.disabled = false;
 	}
 }
 

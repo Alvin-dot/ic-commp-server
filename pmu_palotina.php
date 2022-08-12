@@ -16,9 +16,6 @@
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
 
-  <!-- Toggle button CSS -->
-  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 
@@ -36,19 +33,15 @@
       <h4> Measurement Unit: Palotina </h4>
 
       <!-- Dashboard view selection button -->
-      <div id="dashboard-select-div">
-        <input
-          id="dashboard-select-checkbox"
-          type="checkbox" 
-          checked 
-          data-toggle="toggle"
-          data-on="Simplified Dashboard"
-          data-off="Complete Dashboard"
-          data-onstyle="primary"
-          data-offstyle="secondary"
-          data-width="1140" 
-          data-height="60">
-      </div>
+      <button 
+        id="toggle-btn"
+        type="button" 
+        class="btn btn-primary btn-lg btn-block" 
+        data-toggle="button" 
+        aria-pressed="false" 
+        autocomplete="off">
+        Simplified dashboard
+      </button>
 
       <form
         id="page-form" 
@@ -223,9 +216,6 @@
 
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
-
-  <!-- Toggle button script -->
-  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
   <!-- Data processing algorithms -->
   <script type="text/javascript" src="js/plotly-latest.min.js"></script>
